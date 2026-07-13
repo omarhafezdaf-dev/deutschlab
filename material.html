@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المواد | Deutsch Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        
+:root {
+    --primary: #0d3b66;
+    --secondary: #059669;
+    --accent: #f59e0b;
+    --danger: #dc2626;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: linear-gradient(135deg, #0d3b66 0%, #1e466e 100%);
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.nav-btn:hover {
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+.nav-btn.active {
+    background: var(--accent);
+    color: #1e293b;
+    font-weight: 700;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+    background: linear-gradient(135deg, #0d3b66 0%, #1e466e 50%, #059669 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 40px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #1e293b;
+    box-shadow: 0 4px 15px rgba(245,158,11,0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245,158,11,0.5);
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: white;
+    box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== GRID ===== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* ===== TRUST BAR ===== */
+.trust-bar {
+    background: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin: -30px auto 0;
+    max-width: 900px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 10;
+}
+
+.trust-item {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.trust-item strong {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--primary);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    opacity: 0.8;
+    margin: 5px 0;
+}
+
+.footer-links {
+    margin: 15px 0;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-buttons {
+        justify-content: center;
+    }
+    .nav-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+}
+
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+<div class="nav-container">
+<a href="index.html" class="logo">Deutsch Lab 🧪</a>
+<div class="nav-buttons">
+<a href="index.html" class="nav-btn">الرئيسية</a>
+<a href="about.html" class="nav-btn">من نحن</a>
+<a href="courses.html" class="nav-btn">الكورسات</a>
+<a href="material.html" class="nav-btn active">المواد</a>
+<a href="testimonials.html" class="nav-btn">الآراء</a>
+<a href="contact.html" class="nav-btn">تواصل معنا</a>
+</div>
+</div>
+</nav>
+    
+<div class="page-header">
+    <h1>المواد التعليمية 📦</h1>
+    <p>منتجات رقمية احترافية للتحضير لامتحانات اللغة الألمانية</p>
+</div>
+
+<section class="section">
+    <div class="grid-2">
+        <div class="card" style="text-align: center; border: 2px solid #e2e8f0;">
+            <div style="font-size: 4rem; margin-bottom: 15px;">📚</div>
+            <h3 style="color: var(--primary); margin-bottom: 10px;">ملفات PDF الشاملة</h3>
+            <p style="color: var(--muted); margin-bottom: 15px;">ملخصات قواعد اللغة والمفردات لكل مستوى (A1-C1)</p>
+            <div style="font-size: 1.5rem; font-weight: 900; color: var(--secondary); margin-bottom: 15px;">50 ج.م</div>
+            <a href="https://wa.me/201000000000?text=أريد%20شراء%20ملفات%20PDF" class="btn btn-whatsapp" target="_blank">📱 اشتري الآن</a>
+        </div>
+
+        <div class="card" style="text-align: center; border: 2px solid #e2e8f0;">
+            <div style="font-size: 4rem; margin-bottom: 15px;">📝</div>
+            <h3 style="color: var(--primary); margin-bottom: 10px;">نماذج امتحانات B2</h3>
+            <p style="color: var(--muted); margin-bottom: 15px;">10 نماذج امتحانات سابقة + الإجابات النموذجية</p>
+            <div style="font-size: 1.5rem; font-weight: 900; color: var(--secondary); margin-bottom: 15px;">75 ج.م</div>
+            <a href="https://wa.me/201000000000?text=أريد%20شراء%20نماذج%20B2" class="btn btn-whatsapp" target="_blank">📱 اشتري الآن</a>
+        </div>
+
+        <div class="card" style="text-align: center; border: 2px solid #e2e8f0;">
+            <div style="font-size: 4rem; margin-bottom: 15px;">🎧</div>
+            <h3 style="color: var(--primary); margin-bottom: 10px;">بودكاست الاستماع</h3>
+            <p style="color: var(--muted); margin-bottom: 15px;">20 مقطع صوتي للتدريب على النطق والاستماع</p>
+            <div style="font-size: 1.5rem; font-weight: 900; color: var(--secondary); margin-bottom: 15px;">60 ج.م</div>
+            <a href="https://wa.me/201000000000?text=أريد%20شراء%20البودكاست" class="btn btn-whatsapp" target="_blank">📱 اشتري الآن</a>
+        </div>
+
+        <div class="card" style="text-align: center; border: 2px solid var(--accent); background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);">
+            <div style="font-size: 4rem; margin-bottom: 15px;">📦</div>
+            <h3 style="color: var(--primary); margin-bottom: 10px;">الباقة الكاملة ⭐</h3>
+            <p style="color: var(--muted); margin-bottom: 15px;">كل المنتجات الرقمية + نماذج C1 + قاموس مصور</p>
+            <div style="font-size: 1.5rem; font-weight: 900; color: var(--secondary); margin-bottom: 5px;">150 ج.م</div>
+            <div style="text-decoration: line-through; color: var(--muted); font-size: 0.9rem; margin-bottom: 15px;">185 ج.م</div>
+            <a href="https://wa.me/201000000000?text=أريد%20شراء%20الباقة%20الكاملة" class="btn btn-whatsapp" target="_blank">📱 اشتري الآن</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: white; border-radius: 16px; text-align: center;">
+    <h2 class="section-title">🎁 عرض خاص للطلاب المسجلين</h2>
+    <p class="section-subtitle">لو مسجل في أي كورس، تحصل على خصم 50% على كل المنتجات الرقمية</p>
+    <a href="courses.html" class="btn btn-primary">📚 سجل في كورس الآن</a>
+</section>
+
+    
+<footer>
+    <div class="footer-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <a href="courses.html">الكورسات</a>
+        <a href="material.html">المواد</a>
+        <a href="testimonials.html">الآراء</a>
+        <a href="contact.html">تواصل معنا</a>
+    </div>
+    <p>Deutsch Lab 🇩🇪 - أكاديمية اللغة الألمانية</p>
+    <p>📱 واتساب: 01000000000 | 📧 info@deutschlab.com</p>
+    <p style="margin-top: 15px; opacity: 0.6;">© 2026 Deutsch Lab. جميع الحقوق محفوظة.</p>
+</footer>
+
+</body>
+</html>

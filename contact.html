@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا | Deutsch Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        
+:root {
+    --primary: #0d3b66;
+    --secondary: #059669;
+    --accent: #f59e0b;
+    --danger: #dc2626;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: linear-gradient(135deg, #0d3b66 0%, #1e466e 100%);
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.nav-btn:hover {
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+.nav-btn.active {
+    background: var(--accent);
+    color: #1e293b;
+    font-weight: 700;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+    background: linear-gradient(135deg, #0d3b66 0%, #1e466e 50%, #059669 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 40px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #1e293b;
+    box-shadow: 0 4px 15px rgba(245,158,11,0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245,158,11,0.5);
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: white;
+    box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== GRID ===== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* ===== TRUST BAR ===== */
+.trust-bar {
+    background: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin: -30px auto 0;
+    max-width: 900px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 10;
+}
+
+.trust-item {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.trust-item strong {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--primary);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    opacity: 0.8;
+    margin: 5px 0;
+}
+
+.footer-links {
+    margin: 15px 0;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-buttons {
+        justify-content: center;
+    }
+    .nav-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+}
+
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+<div class="nav-container">
+<a href="index.html" class="logo">Deutsch Lab 🧪</a>
+<div class="nav-buttons">
+<a href="index.html" class="nav-btn">الرئيسية</a>
+<a href="about.html" class="nav-btn">من نحن</a>
+<a href="courses.html" class="nav-btn">الكورسات</a>
+<a href="material.html" class="nav-btn">المواد</a>
+<a href="testimonials.html" class="nav-btn">الآراء</a>
+<a href="contact.html" class="nav-btn active">تواصل معنا</a>
+</div>
+</div>
+</nav>
+    
+<div class="page-header">
+    <h1>تواصل معنا 📞</h1>
+    <p>سجل في كورسك أو اسألنا أي سؤال</p>
+</div>
+
+<section class="section">
+    <div class="grid-2" style="align-items: start;">
+        <!-- Contact Info -->
+        <div>
+            <h2 style="color: var(--primary); margin-bottom: 20px;">معلومات التواصل</h2>
+
+            <div class="card" style="margin-bottom: 20px;">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <div style="font-size: 2rem;">📱</div>
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 5px;">واتساب</h4>
+                        <p style="color: var(--muted);">01000000000</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/201000000000?text=مرحباً%20أريد%20الاستفسار" class="btn btn-whatsapp" target="_blank" style="width: 100%; justify-content: center;">💬 راسلنا على واتساب</a>
+            </div>
+
+            <div class="card" style="margin-bottom: 20px;">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <div style="font-size: 2rem;">📧</div>
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 5px;">البريد الإلكتروني</h4>
+                        <p style="color: var(--muted);">info@deutschlab.com</p>
+                    </div>
+                </div>
+                <a href="mailto:info@deutschlab.com" class="btn btn-primary" style="width: 100%; justify-content: center; background: var(--primary); color: white;">✉️ أرسل إيميل</a>
+            </div>
+
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="font-size: 2rem;">⏰</div>
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 5px;">ساعات العمل</h4>
+                        <p style="color: var(--muted);">السبت - الخميس: 10:00 ص - 10:00 م</p>
+                        <p style="color: var(--muted);">الرد على واتساب: 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+            <h2 style="color: var(--primary); margin-bottom: 20px;">سجل الآن</h2>
+            <div class="card">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--primary);">الاسم الكامل *</label>
+                        <input type="text" name="name" required style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-family: 'Cairo', sans-serif; font-size: 1rem;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--primary);">رقم الواتساب *</label>
+                        <input type="tel" name="phone" required style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-family: 'Cairo', sans-serif; font-size: 1rem;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--primary);">البريد الإلكتروني</label>
+                        <input type="email" name="email" style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-family: 'Cairo', sans-serif; font-size: 1rem;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--primary);">اختر الكورس *</label>
+                        <select name="course" required style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-family: 'Cairo', sans-serif; font-size: 1rem;">
+                            <option value="">-- اختر --</option>
+                            <option value="b2">كورس B2 - 250 €</option>
+                            <option value="c1">كورس C1 - 299 €</option>
+                            <option value="pdf">ملفات PDF - 50 ج.م</option>
+                            <option value="models">نماذج امتحانات - 75 ج.م</option>
+                            <option value="podcast">بودكاست - 60 ج.م</option>
+                            <option value="bundle">الباقة الكاملة - 150 ج.م</option>
+                            <option value="inquiry">استفسار عام</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: var(--primary);">رسالتك</label>
+                        <textarea name="message" rows="4" style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; font-family: 'Cairo', sans-serif; font-size: 1rem; resize: vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; border: none; cursor: pointer;">📨 إرسال الطلب</button>
+                </form>
+
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center; color: var(--muted); font-size: 0.9rem;">
+                    <p>📌 بعد الإرسال، هنتواصل معاك على واتساب في خلال 24 ساعة</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background: white; border-radius: 16px;">
+    <h2 class="section-title">الأسئلة الشائعة</h2>
+
+    <div style="max-width: 800px; margin: 0 auto;">
+        <div style="background: var(--bg); border-radius: 10px; margin-bottom: 15px; overflow: hidden;">
+            <div style="padding: 18px 25px; font-weight: 700; color: var(--primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display=='none'?'block':'none'">
+                كورساتكم أونلاين ولا حضوري؟
+                <span style="font-size: 0.8rem; color: var(--muted);">▼</span>
+            </div>
+            <div style="padding: 0 25px 20px; color: var(--muted); display: none;">كل كورساتنا أونلاين تفاعلية مباشرة عبر Zoom. تقدر تشارك وتسأل وتتفاعل مع المدرب زي الحضوري بالظبط.</div>
+        </div>
+
+        <div style="background: var(--bg); border-radius: 10px; margin-bottom: 15px; overflow: hidden;">
+            <div style="padding: 18px 25px; font-weight: 700; color: var(--primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display=='none'?'block':'none'">
+                إزاي أدفع بالInstaPay أو Vodafone Cash؟
+                <span style="font-size: 0.8rem; color: var(--muted);">▼</span>
+            </div>
+            <div style="padding: 0 25px 20px; color: var(--muted); display: none;">اضغط على زر "احجز الآن" وهيوصلك على واتساب. هنبعتلك رقم المحفظة أو الحساب، تدفع وتبعت screenshot، ونأكدلك الحجز في خلال ساعة.</div>
+        </div>
+
+        <div style="background: var(--bg); border-radius: 10px; margin-bottom: 15px; overflow: hidden;">
+            <div style="padding: 18px 25px; font-weight: 700; color: var(--primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display=='none'?'block':'none'">
+                هل فيه ضمان استرداد؟
+                <span style="font-size: 0.8rem; color: var(--muted);">▼</span>
+            </div>
+            <div style="padding: 0 25px 20px; color: var(--muted); display: none;">آه! لو مش راضي عن الكورس في أول 3 محاضرات، نرجعلك فلوسك بالكامل بدون أسئلة.</div>
+        </div>
+    </div>
+</section>
+
+    
+<footer>
+    <div class="footer-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <a href="courses.html">الكورسات</a>
+        <a href="material.html">المواد</a>
+        <a href="testimonials.html">الآراء</a>
+        <a href="contact.html">تواصل معنا</a>
+    </div>
+    <p>Deutsch Lab 🇩🇪 - أكاديمية اللغة الألمانية</p>
+    <p>📱 واتساب: 01000000000 | 📧 info@deutschlab.com</p>
+    <p style="margin-top: 15px; opacity: 0.6;">© 2026 Deutsch Lab. جميع الحقوق محفوظة.</p>
+</footer>
+
+</body>
+</html>
