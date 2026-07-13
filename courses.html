@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكورسات | Deutsch Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+
+:root {
+    --primary: #0d3b66;
+    --secondary: #059669;
+    --accent: #f59e0b;
+    --danger: #dc2626;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: linear-gradient(135deg, #0d3b66 0%, #1e466e 100%);
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.nav-btn:hover {
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+.nav-btn.active {
+    background: var(--accent);
+    color: #1e293b;
+    font-weight: 700;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+    background: linear-gradient(135deg, #0d3b66 0%, #1e466e 50%, #059669 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 40px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #1e293b;
+    box-shadow: 0 4px 15px rgba(245,158,11,0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245,158,11,0.5);
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: white;
+    box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+}
+
+.level-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+.card h3 {
+    color: var(--primary);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.card li:last-child {
+    border-bottom: none;
+}
+
+.card li span {
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #f1f5f9;
+}
+
+.price {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--muted);
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+/* ===== GRID ===== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* ===== PAYMENT SECTION ===== */
+.payment-section {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+    border: 2px solid var(--secondary);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.payment-section h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.payment-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.payment-method {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.payment-method span {
+    font-size: 1.5rem;
+}
+
+.steps-box {
+    text-align: right;
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.steps-box ol {
+    padding-right: 20px;
+}
+
+.steps-box li {
+    margin-bottom: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    opacity: 0.8;
+    margin: 5px 0;
+}
+
+.footer-links {
+    margin: 15px 0;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-buttons {
+        justify-content: center;
+    }
+    .nav-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+    .card {
+        padding: 20px;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+    
+/* ===== BOOKING BUTTON ===== */
+.btn-book {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-book::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-book:hover::before {
+    left: 100%;
+}
+
+.btn-book:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37,211,102,0.5);
+}
+
+.btn-book:active {
+    transform: translateY(0);
+}
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    70% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+.btn-book {
+    animation: pulse-green 2s infinite;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Deutsch Lab 🧪</a>
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-btn">الرئيسية</a>
+                <a href="about.html" class="nav-btn">من نحن</a>
+                <a href="courses.html" class="nav-btn active">الكورسات</a>
+                <a href="material.html" class="nav-btn">المواد</a>
+                <a href="testimonials.html" class="nav-btn">الآراء</a>
+                <a href="contact.html" class="nav-btn">تواصل معنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>الكورسات المتاحة 📚</h1>
+        <p>كورسات تفاعلية مباشرة عبر Zoom مع مدربين محترفين</p>
+    </div>
+
+    <!-- ===== المستويات الأساسية ===== -->
+    <section class="section">
+        <h2 class="section-title">🎓 المستويات الأساسية</h2>
+        <p class="section-subtitle">ابدأ رحلتك في تعلم الألمانية من الصفر حتى الاحتراف</p>
+        <div class="grid-2">
+
+            <!-- A1 -->
+            <div class="card" style="border-top: 5px solid #3b82f6;">
+                <span class="level-tag" style="background: #3b82f6;">المستوى A1</span>
+                <h3>🇩🇪 المستوى A1</h3>
+                 <span class="badge" style="background: var(--danger);">🔥 الأكثر مبيعاً</span>
+                <ul>
+                    <li><span>✓</span> بث مباشر وتفاعلي بالكامل عبر Zoom</li>
+                    <li><span>✓</span> محاضرتان أسبوعيًا (2.5 ساعة للمحاضرة)</li>
+                    <li><span>✓</span> تأسيس شامل في القراءة والكتابة والاستماع والمحادثة</li>
+                    <li><span>✓</span> تعلم أساسيات القواعد والمفردات اليومية</li>
+                    <li><span>✓</span> واجبات ومتابعة مستمرة بعد كل محاضرة</li>
+                    <li><span>✓</span> ملفات PDF وتمارين إضافية مجانًا</li>
+                    <li><span>✓</span> شهادة إتمام المستوى</li>
+                </ul>
+                <div class="price-row">
+                    <div>
+                        <span class="price">3499 EGP</span>
+                    </div>
+                    <span style="color: var(--muted); font-size: 0.9rem;">⏱️ المدة: 3 أشهر</span>
+                </div>
+            
+                <a href="https://wa.me/201224168820?text=مرحباً%20أريد%20حجز%20الكورس" class="btn-book" target="_blank">📲 احجز الآن</a>
+            </div>
+
+            <!-- A2 -->
+            <div class="card" style="border-top: 5px solid #06b6d4;">
+                <span class="level-tag" style="background: #06b6d4;">المستوى A2</span>
+                <h3>🇩🇪 المستوى A2</h3>
+                <ul>
+                    <li><span>✓</span> بث مباشر وتفاعلي بالكامل عبر Zoom</li>
+                    <li><span>✓</span> محاضرتان أسبوعيًا (2.5 ساعة للمحاضرة)</li>
+                    <li><span>✓</span> تطوير مهارات التواصل في مواقف الحياة اليومية</li>
+                    <li><span>✓</span> توسيع الحصيلة اللغوية والقواعد الأساسية</li>
+                    <li><span>✓</span> تدريبات أسبوعية واختبارات دورية</li>
+                    <li><span>✓</span> ملفات PDF وتمارين مجانية</li>
+                    <li><span>✓</span> شهادة إتمام المستوى</li>
+                </ul>
+                <div class="price-row">
+                    <div>
+                        <span class="price">3499 EGP</span>
+                    </div>
+                    <span style="color: var(--muted); font-size: 0.9rem;">⏱️ المدة: 3 أشهر</span>
+                </div>
+            
+                <a href="https://wa.me/201224168820?text=مرحباً%20أريد%20حجز%20الكورس" class="btn-book" target="_blank">📲 احجز الآن</a>
+            </div>
+
+            <!-- A1 + A2 -->
+            <div class="card" style="border-top: 5px solid #8b5cf6;">
+                <span class="badge" style="background: var(--accent); color: #1e293b;">💰 توفير</span>
+                <span class="level-tag" style="background: #8b5cf6;">A1 + A2</span>
+                <h3>🇩🇪 برنامج A1 + A2</h3>
+                <ul>
+                    <li><span>✓</span> بث مباشر وتفاعلي بالكامل عبر Zoom</li>
+                    <li><span>✓</span> محاضرتان أسبوعيًا</li>
+                    <li><span>✓</span> تأسيس قوي من الصفر حتى نهاية A2</li>
+                    <li><span>✓</span> خطة تعلم متدرجة مع متابعة مستمرة</li>
+                    <li><span>✓</span> اختبارات بعد كل وحدة لقياس التقدم</li>
+                    <li><span>✓</span> ملفات PDF وواجبات مجانية</li>
+                    <li><span>✓</span> شهادة إتمام البرنامج</li>
+                </ul>
+                <div class="price-row">
+                    <div>
+                        <span class="price">5999 EGP</span>
+                        <span class="old-price">7000 جنيه</span>
+                    </div>
+                    <span style="color: var(--muted); font-size: 0.9rem;">⏱️ المدة: 6 أشهر</span>
+                </div>
+            
+                <a href="https://wa.me/201224168820?text=مرحباً%20أريد%20حجز%20الكورس" class="btn-book" target="_blank">📲 احجز الآن</a>
+            </div>
+
+            <!-- B1 -->
+            <div class="card" style="border-top: 5px solid #f59e0b;">
+                <span class="level-tag" style="background: #f59e0b;">المستوى B1</span>
+                <h3>🇩🇪 المستوى B1</h3>
+                <ul>
+                    <li><span>✓</span> بث مباشر وتفاعلي بالكامل عبر Zoom</li>
+                    <li><span>✓</span> محاضرتان أسبوعيًا</li>
+                    <li><span>✓</span> تطوير مهارات التواصل في الدراسة والعمل</li>
+                    <li><span>✓</span> التركيز على المحادثة والكتابة الأكاديمية</li>
+                    <li><span>✓</span> تدريبات مكثفة على الامتحانات</li>
+                    <li><span>✓</span> ملفات PDF وتمارين مجانية</li>
+                    <li><span>✓</span> شهادة إتمام المستوى</li>
+                </ul>
+                <div class="price-row">
+                    <div>
+                        <span class="price">3999 EGP</span>
+                    </div>
+                    <span style="color: var(--muted); font-size: 0.9rem;">⏱️ المدة: 3 أشهر</span>
+                </div>
+            
+                <a href="https://wa.me/201224168820?text=مرحباً%20أريد%20حجز%20الكورس" class="btn-book" target="_blank">📲 احجز الآن</a>
+            </div>
+
+            <!-- B2 -->
+            <div class="card" style="border-top: 5px solid var(--primary);">
+                <span class="badge" style="background: var(--danger);">🔥 الأكثر مبيعاً</span>
+                <span class="level-tag" style="background: var(--primary);">المستوى B2</span>
+                <h3>🇩🇪 المستوى B2</h3>
+                <ul>
+                    <li><span>✓</span> بث مباشر وتفاعلي بالكامل عبر Zoom</li>
+                    <li><span>✓</span> محاضرتان أسبوعيًا</li>
+                    <li><span>✓</span> الوصول إلى مستوى احترافي في استخدام اللغة</li>
+                    <li><span>✓</span> تطوير مهارات النقاش والعرض والكتابة الرسمية</li>
+                    <li><span>✓</span> تأهيل لسوق العمل والدراسة</li>
+                    <li><span>✓</span> ملفات PDF ونماذج امتحانات</li>
+                    <li><span>✓</span> شهادة إتمام المستوى</li>
+                </ul>
+                <div class="price-row">
+                    <div>
+                        <span class="price">5999 EGP</span>
+                    </div>
+                    <span style="color: var(--muted); font-size: 0.9rem;">⏱️ المدة: 6 أشهر</span>
+                </div>
+            
+                <a href="https://wa.me/201224168820?text=مرحباً%20أريد%20حجز%20الكورس" class="btn-book" target="_blank">📲 احجز الآن</a>
+            </div>
+
+            <!-- B1 + B2 -->
+            <div class="card" style="border-top: 5px solid var(--secondary);">
+                <span class="badge" style="background: var(--accent); color: #1e293b;">⭐ الأفضل قيمة</span>
+                <span class="level-tag" style="background: var(--secondary);">B1 + B2</span>
+                <h3>🇩🇪 برنامج B1 + B2</h3>
+                <ul>
+                    <li><span>✓</span> بث مباشر وتفاعلي بالكامل عبر Zoom</li>
+                    <li><span>✓</span> محاضرتان أسبوعيًا</li>
+                    <li><span>✓</span> برنامج متكامل من B1 حتى B2</li>
+                    <li><span>✓</span> تأهيل لاجتياز الامتحانات الدولية</li>
+                    <li><span>✓</span> إعداد لسوق العمل في مصر والدول الناطقة بالألمانية</li>
+                    <li><span>✓</span> متابعة شخصية واختبارات دورية</li>
+                    <li><span>✓</span> شهادة إتمام البرنامج</li>
+                </ul>
+                <div class="price-row">
+                    <div>
+                        <span class="price">8499 EGP</span>
+                        <span class="old-price">10000 جنيه</span>
+                    </div>
+                    <span style="color: var(--muted); font-size: 0.9rem;">⏱️ المدة: 10 أشهر</span>
+                </div>
+            
+                <a href="https://wa.me/201224168820?text=مرحباً%20أريد%20حجز%20الكورس" class="btn-book" target="_blank">📲 احجز الآن</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== تحضير الامتحانات ===== -->
+    <section class="section">
+        <h2 class="section-title">📝 تحضير الامتحانات</h2>
+        <p class="section-subtitle">استعد للامتحانات الدولية بثقة واحترافية</p>
+        <div class="grid-2">
+
+            <!-- B1 Prüfung -->
+            <div class="card" style="border-top: 5px solid #ef4444;">
+                <span class="level-tag" style="background: #ef4444;">تحضير امتحان</span>
+                <h3>📝 B1 Prüfung Vorbereitung</h3>
+                <ul>
+                    <li><span>✓</span> بث مباشر وتفاعلي بالكامل عبر Zoom</li>
+                    <li><span>✓</span> محاضرتان أسبوعيًا</li>
+                    <li><span>✓</span> تدريب مكثف على أقسام الامتحان الأربعة</li>
+                    <li><span>✓</span> استراتيجيات حل سريعة ونصائح النجاح</li>
+                    <li><span>✓</span> نماذج امتحانات وتقييم مستمر</li>
+                    <li><span>✓</span> ملفات PDF مجانية</li>
+                    <li><span>✓</span> متابعة شخصية حتى موعد الامتحان</li>
+                </ul>
+                <div class="price-row">
+                    <div>
+                        <span class="price">1199 EGP</span>
+                    </div>
+                    <span style="color: var(--muted); font-size: 0.9rem;">⏱️ المدة: شهر واحد</span>
+                </div>
+            
+                <a href="https://wa.me/201224168820?text=مرحباً%20أريد%20حجز%20الكورس" class="btn-book" target="_blank">📲 احجز الآن</a>
+            </div>
+
+        </div>
+    </section>
+            
+    <!-- ===== التدريب المهني ===== -->
+    <section class="section">
+        <h2 class="section-title">👔 التدريب المهني</h2>
+        <p class="section-subtitle">تأهيل احترافي لسوق العمل</p>
+        <div class="grid-2">
+
+            <!-- German Teacher -->
+            <div class="card" style="border-top: 5px solid #7c3aed;">
+                <span class="level-tag" style="background: #7c3aed;">تأهيل مهني</span>
+                <h3>👨‍🏫 Train to Hire as a German Teacher</h3>
+                <ul>
+                    <li><span>✓</span> بث مباشر وتفاعلي بالكامل عبر Zoom</li>
+                    <li><span>✓</span> محاضرتان أسبوعيًا</li>
+                    <li><span>✓</span> أساسيات تدريس اللغة الألمانية باحتراف</li>
+                    <li><span>✓</span> إدارة الفصل وشرح القواعد بطريقة مبسطة</li>
+                    <li><span>✓</span> تدريب عملي (Micro Teaching)</li>
+                    <li><span>✓</span> إعداد للسيرة الذاتية والمقابلات</li>
+                    <li><span>✓</span> شهادة إتمام البرنامج</li>
+                </ul>
+                <div class="price-row">
+                    <div>
+                        <span class="price">1399 EGP</span>
+                    </div>
+                    <span style="color: var(--muted); font-size: 0.9rem;">⏱️ المدة: شهر واحد</span>
+                </div>
+            
+                <a href="https://wa.me/201224168820?text=مرحباً%20أريد%20حجز%20الكورس" class="btn-book" target="_blank">📲 احجز الآن</a>
+            </div>
+
+            <!-- Call Center Agent -->
+            <div class="card" style="border-top: 5px solid #0ea5e9;">
+                <span class="level-tag" style="background: #0ea5e9;">تأهيل مهني</span>
+                <h3>🎧 Train to Hire as a German Call Center Agent</h3>
+                <ul>
+                    <li><span>✓</span> بث مباشر وتفاعلي بالكامل عبر Zoom</li>
+                    <li><span>✓</span> محاضرتان أسبوعيًا</li>
+                    <li><span>✓</span> تدريب على محادثات خدمة العملاء</li>
+                    <li><span>✓</span> تعلم المصطلحات المستخدمة في بيئة العمل</li>
+                    <li><span>✓</span> محاكاة لمقابلات التوظيف</li>
+                    <li><span>✓</span> تحسين النطق وسرعة الاستجابة</li>
+                    <li><span>✓</span> شهادة إتمام البرنامج</li>
+                </ul>
+                <div class="price-row">
+                    <div>
+                        <span class="price">1399 EGP</span>
+                    </div>
+                    <span style="color: var(--muted); font-size: 0.9rem;">⏱️ المدة: شهر واحد</span>
+                </div>
+            
+                <a href="https://wa.me/201224168820?text=مرحباً%20أريد%20حجز%20الكورس" class="btn-book" target="_blank">📲 احجز الآن</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== نادي المحادثة ===== -->
+    <section class="section">
+        <h2 class="section-title">🗣️ نادي المحادثة</h2>
+        <p class="section-subtitle">طور طلاقتك وثقتك في التحدث بالألمانية</p>
+        <div class="grid-2" style="max-width: 600px; margin: 0 auto;">
+
+            <!-- Conversation Club -->
+            <div class="card" style="border-top: 5px solid #ec4899;">
+                <span class="level-tag" style="background: #ec4899;">محادثة</span>
+                <h3>🗣️ German Conversation Club</h3>
+                <ul>
+                    <li><span>✓</span> بث مباشر وتفاعلي بالكامل عبر Zoom</li>
+                    <li><span>✓</span> محاضرتان أسبوعيًا</li>
+                    <li><span>✓</span> تطوير طلاقة التحدث والثقة بالنفس</li>
+                    <li><span>✓</span> مناقشة موضوعات واقعية مع تصحيح فوري</li>
+                    <li><span>✓</span> زيادة الحصيلة اللغوية والتعبيرات اليومية</li>
+                    <li><span>✓</span> تدريب على المقابلات الشخصية والعرض الشفهي</li>
+                    <li><span>✓</span> مناسب للراغبين في الحفاظ على مستواهم أو تطويره</li>
+                </ul>
+                <div class="price-row">
+                    <div>
+                        <span class="price">799 EGP</span>
+                    </div>
+                    <span style="color: var(--muted); font-size: 0.9rem;">⏱️ المدة: شهر واحد</span>
+                </div>
+            
+                <a href="https://wa.me/201224168820?text=مرحباً%20أريد%20حجز%20الكورس" class="btn-book" target="_blank">📲 احجز الآن</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== طرق الدفع ===== -->
+    <div class="payment-section">
+        <h3>💳 طرق الدفع المتاحة</h3>
+        <div class="payment-grid">
+            <div class="payment-method"><span>📱</span> <span>InstaPay</span></div>
+            <div class="payment-method"><span>💰</span> <span>Vodafone Cash</span></div>
+            <div class="payment-method"><span>🏦</span> <span>تحويل بنكي</span></div>
+        </div>
+        <div class="steps-box">
+            <ol>
+                <li><strong>اختر الكورس</strong> واضغط على زر "احجز الآن"</li>
+                <li><strong>ابعت رسالة واتساب</strong> وهنبعتلك رقم المحفظة / الحساب</li>
+                <li><strong>ادفع</strong> وابعت screenshot لإثبات الدفع</li>
+                <li><strong>هنأكدلك</strong> في خلال ساعة ونبعتلك كل التفاصيل</li>
+            </ol>
+        </div>
+        <a href="https://wa.me/201224168820?text=مرحباً%20أريد%20الاستفسار%20عن%20الدفع" class="btn btn-whatsapp" target="_blank">💬 تواصل للدفع الآن</a>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="courses.html">الكورسات</a>
+            <a href="material.html">المواد</a>
+            <a href="testimonials.html">الآراء</a>
+            <a href="contact.html">تواصل معنا</a>
+        </div>
+        <p>Deutsch Lab 🇩🇪 - أكاديمية اللغة الألمانية</p>
+        <p>📱 واتساب: 01224168820 | 📧 info@deutschlab.com</p>
+        <p style="margin-top: 15px; opacity: 0.6;">© 2026 Deutsch Lab. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>

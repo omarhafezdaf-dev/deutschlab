@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرئيسية | Deutsch Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        
+:root {
+    --primary: #0d3b66;
+    --secondary: #059669;
+    --accent: #f59e0b;
+    --danger: #dc2626;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background: linear-gradient(135deg, #0d3b66 0%, #1e466e 100%);
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.nav-btn:hover {
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+.nav-btn.active {
+    background: var(--accent);
+    color: #1e293b;
+    font-weight: 700;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+    background: linear-gradient(135deg, #0d3b66 0%, #1e466e 50%, #059669 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 40px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: 'Cairo', sans-serif;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #1e293b;
+    box-shadow: 0 4px 15px rgba(245,158,11,0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245,158,11,0.5);
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: white;
+    box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== GRID ===== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* ===== TRUST BAR ===== */
+.trust-bar {
+    background: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin: -30px auto 0;
+    max-width: 900px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 10;
+}
+
+.trust-item {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.trust-item strong {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--primary);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    opacity: 0.8;
+    margin: 5px 0;
+}
+
+.footer-links {
+    margin: 15px 0;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-buttons {
+        justify-content: center;
+    }
+    .nav-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+}
+
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+<div class="nav-container">
+<a href="index.html" class="logo">Deutsch Lab 🧪</a>
+<div class="nav-buttons">
+<a href="index.html" class="nav-btn active">الرئيسية</a>
+<a href="about.html" class="nav-btn">من نحن</a>
+<a href="courses.html" class="nav-btn">الكورسات</a>
+<a href="material.html" class="nav-btn">المواد</a>
+<a href="testimonials.html" class="nav-btn">الآراء</a>
+<a href="contact.html" class="nav-btn">تواصل معنا</a>
+</div>
+</div>
+</nav>
+    
+<!-- HERO -->
+<section class="hero" style="background: linear-gradient(135deg, #0d3b66 0%, #1e466e 50%, #059669 100%); color: white; padding: 80px 20px; text-align: center;">
+    <div style="display: inline-block; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.3);">🎯 كورسات ألماني معتمدة - أونلاين عبر Zoom</div>
+    <h1 style="font-size: 2.5rem; font-weight: 900; margin-bottom: 15px;">تعلم الألمانية من البداية للاحتراف 🇩🇪</h1>
+    <p style="font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 30px;">كورسات تفاعلية مباشرة + منتجات رقمية للتحضير لامتحانات اللغة الألمانية Goethe</p>
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="courses.html" class="btn btn-primary">📚 اختر كورسك الآن</a>
+        <a href="https://wa.me/201000000000?text=مرحباً%20أريد%20الاستفسار" class="btn btn-whatsapp" target="_blank">💬 استفسر عبر واتساب</a>
+    </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+    <div class="trust-item"><strong>+500</strong> طالب سعيد</div>
+    <div class="trust-item"><strong>98%</strong> نسبة النجاح</div>
+    <div class="trust-item"><strong>⭐ 4.9</strong> تقييم الطلاب</div>
+    <div class="trust-item"><strong>100%</strong> أونلاين تفاعلي</div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+    <h2 class="section-title">ازاي تحجز كورسك؟</h2>
+    <p class="section-subtitle">3 خطوات بسيطة وانت داخل الكورس</p>
+    <div class="grid-3">
+        <div class="card" style="text-align: center;">
+            <div style="width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 900; margin: 0 auto 15px;">1</div>
+            <h4 style="color: var(--primary); margin-bottom: 8px;">اختر الكورس</h4>
+            <p style="color: var(--muted); font-size: 0.9rem;">اختر مستواك (A1، A2، B1 أو B2) واضغط على "احجز الآن".</p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div style="width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 900; margin: 0 auto 15px;">2</div>
+            <h4 style="color: var(--primary); margin-bottom: 8px;">ادفع بسهولة</h4>
+            <p style="color: var(--muted); font-size: 0.9rem;">ادفع عبر InstaPay أو Vodafone Cash وابعت إثبات الدفع على واتساب</p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div style="width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 900; margin: 0 auto 15px;">3</div>
+            <h4 style="color: var(--primary); margin-bottom: 8px;">ابدأ التعلم</h4>
+            <p style="color: var(--muted); font-size: 0.9rem;">هنبعتلك رابط Zoom والمادة في خلال 24 ساعة</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section style="background: linear-gradient(135deg, var(--primary) 0%, #1e466e 100%); color: white; padding: 60px 20px; text-align: center; border-radius: 16px; margin: 40px auto; max-width: 1100px;">
+    <h2 style="font-size: 1.8rem; margin-bottom: 15px;">🚀 مستعد تبدأ رحلتك في تعلم الألمانية؟</h2>
+    <p style="opacity: 0.9; margin-bottom: 25px;">انضم لـ +500 طالب نجحوا معانا. أول محاضرة مجانية!</p>
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-primary">🎁 احجز محاضرة مجانية</a>
+        <a href="courses.html" class="btn btn-outline">📚 تصفح الكورسات</a>
+    </div>
+</section>
+
+    
+<footer>
+    <div class="footer-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <a href="courses.html">الكورسات</a>
+        <a href="material.html">المواد</a>
+        <a href="testimonials.html">الآراء</a>
+        <a href="contact.html">تواصل معنا</a>
+    </div>
+    <p>Deutsch Lab 🇩🇪 - أكاديمية اللغة الألمانية</p>
+    <p>📱 واتساب: +201224168820 | 📧 deutschlab.edu.com</p>
+    <p style="margin-top: 15px; opacity: 0.6;">© 2026 Deutsch Lab. جميع الحقوق محفوظة.</p>
+</footer>
+
+</body>
+</html>
